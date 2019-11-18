@@ -1,0 +1,14 @@
+version: "3.2"
+services:
+  composer:
+      build: "docker/composer"
+      volumes:
+        - './:/var/utilities/payment_generator'
+  console:
+      build: "docker/console"
+      volumes:
+        - './:/var/utilities/payment_generator'
+  phpunit:
+    build: "docker/phpunit"
+    volumes:
+    - './:/var/utilities/payment_generator'
